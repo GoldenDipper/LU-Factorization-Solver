@@ -3,12 +3,12 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-        int[][] MatrixU = { { 1, 0, 1, 3 }, { -2, 1, -2, -1 }, { 5, 3, 1, 2 } };
-        int[][] MatrixL = new int[3][4];
-        int[] MatrixLResults = { 1, 1, 1 };
-        int[] MatrixUResults = { 1, 1, 1 };
-        int[] equalizingValues = new int[3];
-
+        double[][] MatrixU = { { 1, 0, 1, 3 }, { -2, 1, -2, -1 }, { 5, 3, 1, 2 } };
+        double[][] MatrixL = new double[3][4];
+        double[] MatrixLResults = { 1, 1, 1 };
+        double[] MatrixUResults = { 1, 1, 1 };
+        double[] equalizingValues = new double[3];
+        
         populateMatrixL(MatrixL, MatrixU);
 
         display2DMatrix(MatrixU);
@@ -29,7 +29,7 @@ public class App {
 
     }
 
-    public static void display2DMatrix(int[][] Matrix) {
+    public static void display2DMatrix(double[][] Matrix) {
         for (int i = 0; i < Matrix.length; i++) {
             for (int j = 0; j < Matrix[0].length; j++) {
                 if (Matrix[i][j] >= 0) {
@@ -43,14 +43,14 @@ public class App {
         System.out.println("\n-------------");
     }
 
-    public static void display1DMatrix(int[] Matrix) {
+    public static void display1DMatrix(double[] Matrix) {
         for (int i = 0; i < Matrix.length; i++) {
             System.out.print(Matrix[i] + " ");
         }
         System.out.println("\n-------------");
     }
 
-    public static int[][] populateMatrixL(int[][] MatrixL, int[][] MatrixU) {
+    public static double[][] populateMatrixL(double[][] MatrixL, double[][] MatrixU) {
 
         for (int i = 0; i < MatrixL.length; i++) {
             for (int j = 0; j < MatrixL[0].length; j++) {
@@ -72,7 +72,7 @@ public class App {
         return MatrixL;
     }
 
-    public static int[] clearValueCalculator(int[][] MatrixU, int[] equalizingValues) {
+    public static double[] clearValueCalculator(double[][] MatrixU, double[] equalizingValues) {
 
         // find the values to clear the positions
         for (int i = 0; i < positions.length; i++) {
@@ -100,16 +100,16 @@ public class App {
         return equalizingValues;
     }
 
-    public static void inputValuesToMatrixL(int[][] MatrixL, int[] equalizingValues) {
+    public static void inputValuesToMatrixL(double[][] MatrixL, double[] equalizingValues) {
 
         for (int i = 0; i < positions.length; i++) {
             MatrixL[positions[i][0]][positions[i][1]] = -1 * equalizingValues[i];
         }
     }
 
-    public static void linerEquationMatrixL(int[][] MatrixL, int[] MatrixLResults) {
-        int constant = 0;
-        int coefficient = 0;
+    public static void linerEquationMatrixL(double[][] MatrixL, double[] MatrixLResults) {
+        double constant = 0;
+        double coefficient = 0;
 
         for (int i = 0; i < MatrixL.length; i++) {
             for (int j = 0; j < (MatrixL[0].length - 1); j++) {
@@ -133,9 +133,9 @@ public class App {
         display1DMatrix(MatrixLResults);
     }
 
-    public static void linerEquationMatrixU(int[][] MatrixU, int[] MatrixUResults) {
-        int constant = 0;
-        int coefficient = 0;
+    public static void linerEquationMatrixU(double[][] MatrixU, double[] MatrixUResults) {
+        double constant = 0;
+        double coefficient = 0;
 
         for (int i = (MatrixU.length - 1); i >= 0; i--) {
             for (int j = 0; j < (MatrixU[0].length - 1); j++) {
