@@ -10,7 +10,7 @@ public class App {
         double[] equalizingValues = new double[3];
         
         populateMatrixL(MatrixL, MatrixU);
-
+        
         display2DMatrix(MatrixU);
 
         clearValueCalculator(MatrixU, equalizingValues);
@@ -40,14 +40,14 @@ public class App {
             }
             System.out.println();
         }
-        System.out.println("\n-------------");
+        System.out.println("\n--------------------");
     }
 
     public static void display1DMatrix(double[] Matrix) {
         for (int i = 0; i < Matrix.length; i++) {
             System.out.print(Matrix[i] + " ");
         }
-        System.out.println("\n-------------");
+        System.out.println("\n--------------------");
     }
 
     public static double[][] populateMatrixL(double[][] MatrixL, double[][] MatrixU) {
