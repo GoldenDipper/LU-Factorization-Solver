@@ -146,9 +146,8 @@ public class App {
                 } else {
                     constant += (MatrixUResults[j] * MatrixU[i][j]);
                 }
-                // System.out.println("constant: " + constant);
+                
             }
-            // System.out.println("coefficient is: " + coefficient);
 
             // solving the equation
             MatrixUResults[i] = (MatrixU[i][3] - constant) / coefficient;
