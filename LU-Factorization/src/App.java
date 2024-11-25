@@ -3,7 +3,8 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-        double[][] MatrixU = { { 1, 0, 1, 3 }, { -2, 1, -2, -1 }, { 5, 3, 1, 2 } };
+        //double[][] MatrixU = { { 1, 0, 1, 3 }, { -2, 1, -2, -1 }, { 5, 3, 1, 2 } };
+        double[][] MatrixU = { { 3, 6, -9, 0 }, { 2, 5, -3, -4 }, { -4, 1, 10, 3 } };
         double[][] MatrixL = new double[3][4];
         double[] MatrixLResults = { 1, 1, 1 };
         double[] MatrixUResults = { 1, 1, 1 };
@@ -33,9 +34,9 @@ public class App {
         for (int i = 0; i < Matrix.length; i++) {
             for (int j = 0; j < Matrix[0].length; j++) {
                 if (Matrix[i][j] >= 0) {
-                    System.out.print("  " + Matrix[i][j]);
+                    System.out.print("  "+(int)(Matrix[i][j] * 100) / 100.0);
                 } else {
-                    System.out.print(" " + Matrix[i][j]);
+                    System.out.print(" "+(int)(Matrix[i][j] * 100) / 100.0);
                 }
             }
             System.out.println();
@@ -45,7 +46,7 @@ public class App {
 
     public static void display1DMatrix(double[] Matrix) {
         for (int i = 0; i < Matrix.length; i++) {
-            System.out.print(Matrix[i] + " ");
+            System.out.print((int)(Matrix[i] * 100) / 100.0 + " ");
         }
         System.out.println("\n--------------------");
     }
